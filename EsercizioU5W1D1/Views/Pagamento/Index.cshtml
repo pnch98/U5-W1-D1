@@ -1,0 +1,57 @@
+﻿@model IEnumerable<EsercizioU5W1D1.Models.Pagamento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdPagamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdDipendente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ammonto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoPagamento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPagamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (EsercizioU5W1D1.Models.Pagamento pagamento in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => pagamento.IdPagamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => pagamento.IdDipendente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => pagamento.Ammonto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => pagamento.TipoPagamento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => pagamento.DataPagamento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
